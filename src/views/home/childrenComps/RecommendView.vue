@@ -36,7 +36,7 @@ export default {
 }
 .recommend-item img {
   width: 90%;
-  height: 80%;
+  height: 75%;
   margin-bottom: 10px;
 }
 </style>
