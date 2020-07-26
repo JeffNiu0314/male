@@ -53,7 +53,7 @@ export default {
     TabControl,
     GoodsList,
     Scroll,
-    BackTop
+    BackTop,
   },
   data() {
     return {
@@ -62,19 +62,19 @@ export default {
       goods: {
         pop: { page: 0, list: [] },
         new: { page: 0, list: [] },
-        sell: { page: 0, list: [] }
+        sell: { page: 0, list: [] },
       },
       currentType: "pop",
       isShowBackTop: false,
       tabOffsetTop: 0,
       isTabFixed: false,
-      saveY: 0
+      saveY: 0,
     };
   },
   computed: {
     showGoods() {
       return this.goods[this.currentType].list;
-    }
+    },
   },
   created() {
     this.getHomeMultidata();
@@ -99,14 +99,14 @@ export default {
   methods: {
     //网络请求相关
     getHomeMultidata() {
-      getHomeMultidata().then(res => {
+      getHomeMultidata().then((res) => {
         this.banners = res.data.banner.list;
         this.recommends = res.data.recommend.list;
       });
     },
     getHomeGoods(type) {
       const page = this.goods[type].page + 1;
-      getHomeGoods(type, page).then(res => {
+      getHomeGoods(type, page).then((res) => {
         this.goods[type].list.push(...res.data.list);
         this.goods[type].page += 1;
 
@@ -142,8 +142,8 @@ export default {
     },
     swiperImageLoad() {
       this.tabOffsetTop = this.$refs.tabControl2.$el.offsetTop;
-    }
-  }
+    },
+  },
 };
 </script>
 
