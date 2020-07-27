@@ -1,16 +1,7 @@
 <template>
   <div id="detail">
-    <detail-nav-bar
-      class="detail-navbar"
-      @titleClick="titleClick"
-      ref="nav"
-    ></detail-nav-bar>
-    <scroll
-      class="scroll-content"
-      ref="scroll"
-      @scroll="contentScroll"
-      :probe-type="3"
-    >
+    <detail-nav-bar class="detail-navbar" @titleClick="titleClick" ref="nav"></detail-nav-bar>
+    <scroll class="scroll-content" ref="scroll" @scroll="contentScroll" :probe-type="3">
       <detail-swiper :top-images="topImages"></detail-swiper>
       <detail-base-info :goods="goods" />
       <detail-shop-info :shop="shop" />
@@ -38,7 +29,7 @@ import {
   Goods,
   Shop,
   GoodsParam,
-  getRecommend
+  getRecommend,
 } from "network/detail";
 
 import Scroll from "components/common/scroll/Scroll";
@@ -57,7 +48,7 @@ export default {
       commentInfo: {},
       themeTopYs: [],
       currentIndex: 0,
-      isShowBackTop: false
+      isShowBackTop: false,
     };
   },
   components: {
@@ -70,12 +61,12 @@ export default {
     DetailParamInfo,
     DetailCommentInfo,
     DetailBottomBar,
-    BackTop
+    BackTop,
   },
   created() {
     this.iid = this.$route.params.iid;
 
-    getDetail(this.iid).then(res => {
+    getDetail(this.iid).then((res) => {
       const data = res.result;
 
       this.topImages = data.itemInfo.topImages;
@@ -140,9 +131,9 @@ export default {
       product.price = this.price;
       product.iid = this.iid;
 
-      this.$store.commit("addCart", product);
-    }
-  }
+      this.$store.commit("addToCart", product);
+    },
+  },
 };
 </script>
 
