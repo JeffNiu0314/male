@@ -1,19 +1,21 @@
-# supermall
+# 蘑菇街
+基于Vue开发的模拟蘑菇街实战项目，由于时间原因，只完成了首页部分与商品详情页的封装，期待后续完善
 
-## Project setup
+接口属于收费接口，这里暂不共享~
+## 安装项目必要组件
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### VueCli3.x 编译并压缩项目
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### VueCli2.x 编译并压缩项目
 ```
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 自定义配置
+查看 [Configuration Reference](https://cli.vuejs.org/config/).
