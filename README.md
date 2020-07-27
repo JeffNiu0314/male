@@ -7,12 +7,12 @@
 npm install
 ```
 
-### VueCli3.x 编译并压缩项目
+### VueCli 3.x 编译并压缩项目
 ```
 npm run serve
 ```
 
-### VueCli2.x 编译并压缩项目
+### VueCli 2.x 编译并压缩项目
 ```
 npm run build
 ```
